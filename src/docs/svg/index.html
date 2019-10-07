@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title><%= spriteName %>.svg</title>
+    <style>
+        html {
+            background: #eee;
+        }
+        body {
+            margin: 0;
+        }
+        svg {
+            width: 70px;
+            height: 70px;
+        }
+
+        .title {
+            padding: 7px;
+            margin: 0px auto 35px;
+            text-align: center;
+            background: #5a5a5a;
+            color: #fff;
+        }
+        .title span {
+            display: inline-block;
+            font-size: 25px;
+            font-family: monospace;
+        }
+        .svg-icon-list {
+            padding: 0;
+            text-align: center;
+        }
+        .svg-icon-list__item {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 0 5px 10px;
+            padding: 10px 5px 0;
+            text-align: center;
+            vertical-align: top;
+            background: #fff;
+        }
+        .svg-icon-list__item__id {
+            margin: 0;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 17px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <%= inlineSvg %>
+    <h1 class="title"><span><%= spriteName %>.svg</span></h1>
+    <ul class="svg-icon-list">
+        <% _.each(symbols, function(symbol) { %>
+        <li class="svg-icon-list__item">
+            <svg><use xlink:href="#<%= symbol.id %>"></use></svg>
+            <p class='svg-icon-list__item__id'><%= symbol.id %></p>
+        </li>
+        <% }); %>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "sourceType": "module"
+    }
+  },
+  "globals": {
+    "document": true,
+    "window": true,
+    "e": true,
+    "event": true,
+    "ACMS": true,
+    "google": true,
+    "prettyPrint": true,
+    "_": true,
+    "$": true,
+    "jQuery": true,
+    "RnscPt": true,
+    "isProduction": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "config/**",
+          "gulp/**",
+          "**/gulpfile.js",
+          "test/**"
+        ],
+        "optionalDependencies": true
+      }
+    ],
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_defaults"
+        ]
+      }
+    ],
+    "no-plusplus": 0,
+    "arrow-body-style": 0,
+    "comma-dangle": 0,
+    "indent":[2, 2, {"SwitchCase": 1}]
+  }
+}
